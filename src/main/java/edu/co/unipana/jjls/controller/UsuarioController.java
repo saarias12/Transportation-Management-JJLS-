@@ -18,6 +18,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import edu.co.unipana.jjls.model.Usuario;
 import edu.co.unipana.jjls.service.IUsuarioService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 
 
@@ -47,11 +50,16 @@ public class UsuarioController {
 	 * @return En el header el URI de consulta al paciente registrado 
 	 */
 	@PostMapping(produces = "application/json")
+	@ApiOperation(value = "Servicio que registra usuarios en el sistema", notes = "Los datos retornados por el servicio se encuentran en la base de datos de la aplicacion ")
+	@ApiResponses(value = { @ApiResponse(code = 500, message = "Sucede si falla al enviar la respuesta"),
+			@ApiResponse(code = 200, message = "En caso de encontrar el listado de departamentos y/o areas"),
+			@ApiResponse(code = 401, message = "En caso de no esta autorizado para consultar informacion"),
+			@ApiResponse(code = 404, message = "En caso de no encontrar información")})
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Usuario usuario) {
 		usuario.setPassword(bcrypt.encode(usuario.getPassword()));
 		Usuario usuarioRegistrado = usuarioService.guardar(usuario);
 		// Se genera el URI de consulta al paciente registrado y se retorna en el encabezado de la peticion
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuarioRegistrado.getIdUsuario()).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuarioRegistrado.getId()).toUri();
 		return ResponseEntity.created(location).build();
 	}
 }
