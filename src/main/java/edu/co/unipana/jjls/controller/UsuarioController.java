@@ -52,7 +52,7 @@ public class UsuarioController {
 	@PostMapping(produces = "application/json")
 	@ApiOperation(value = "Servicio que registra usuarios en el sistema", notes = "Los datos retornados por el servicio se encuentran en la base de datos de la aplicacion ")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Sucede si falla al enviar la respuesta"),
-			@ApiResponse(code = 200, message = "En caso de encontrar el listado de departamentos y/o areas"),
+			@ApiResponse(code = 201, message = "En caso de crear el usuario exitosamente"),
 			@ApiResponse(code = 401, message = "En caso de no esta autorizado para consultar informacion"),
 			@ApiResponse(code = 404, message = "En caso de no encontrar información")})
 	public ResponseEntity<Object> registrar(@Valid @RequestBody Usuario usuario) {
