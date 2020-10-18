@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,6 +48,7 @@ public class VehiculoController {
 	 * @param vehiculo Objeto con los datos del vehiculo a registrar
 	 * @return 
 	 */
+	@CrossOrigin(origins = "*")
 	@PostMapping(produces = "application/json")
 	@ApiOperation(value = "Servicio que registra vehiculos en el sistema", notes = "Los datos retornados por el servicio se encuentran en la base de datos de la aplicacion ")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Sucede si falla al enviar la respuesta"),

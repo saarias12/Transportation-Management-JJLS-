@@ -10,6 +10,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,6 +46,7 @@ public class DepartamentoController {
 	 * @param dep Objeto con los datos del departamento a registrar
 	 * @return
 	 */
+	@CrossOrigin(origins = "*")
 	@PostMapping(produces = "application/json")
 	@ApiOperation(value = "Servicio que registra departamentos en el sistema", notes = "Los datos retornados por el servicio se encuentran en la base de datos de la aplicacion ")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Sucede si falla al enviar la respuesta"),
@@ -70,6 +72,7 @@ public class DepartamentoController {
 	 * @return Lista de departamentos y areas configuradas en oracle web center
 	 *         content
 	 */
+	@CrossOrigin(origins = "*")
 	@GetMapping(produces = "application/json")
 	@ApiOperation(value = "Servicio que regresa la lista de departamentos", notes = "Los datos retornados por el servicio se encuentran en la base de datos del sistema ")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Sucede si falla al enviar la respuesta"),

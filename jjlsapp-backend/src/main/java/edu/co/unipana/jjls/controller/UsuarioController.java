@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,6 +50,7 @@ public class UsuarioController {
 	 * @param usuario Objeto con los datos del usuario a registrar
 	 * @return En el header el URI de consulta al paciente registrado 
 	 */
+	@CrossOrigin(origins = "*")
 	@PostMapping(produces = "application/json")
 	@ApiOperation(value = "Servicio que registra usuarios en el sistema", notes = "Los datos retornados por el servicio se encuentran en la base de datos de la aplicacion ")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Sucede si falla al enviar la respuesta"),
