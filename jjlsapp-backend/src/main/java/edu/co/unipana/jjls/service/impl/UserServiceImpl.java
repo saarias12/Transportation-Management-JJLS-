@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import edu.co.unipana.jjls.model.Usuario;
 import edu.co.unipana.jjls.repo.IUsuarioRepo;
@@ -25,12 +26,14 @@ import edu.co.unipana.jjls.service.IUsuarioService;
  * @date 19/09/2020
  *
  */
+
 @Service("userDetailsService")
 public class UserServiceImpl implements UserDetailsService, IUsuarioService {
 
 	@Autowired
 	private IUsuarioRepo usuarioRepo;
 
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Usuario user = usuarioRepo.findOneByUsername(username); // from usuario where username := username
