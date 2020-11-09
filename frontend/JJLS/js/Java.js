@@ -35,6 +35,15 @@ function validarrespuesta(response){
 	
 	console.log(response);
 	
+	if (response.status!="201"){
+	alert("Error registro: Datos incompletos o erroneos");	
+		}
+	
+	if (response.status=="201"){
+	window.location.href="file:///C:/Users/Luisp/Desktop/JJLS/Vistas/AdminUser/Registro_correcto2.html";	
+		}
+		
 }
+
 
 
