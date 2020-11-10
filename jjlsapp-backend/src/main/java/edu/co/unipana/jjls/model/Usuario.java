@@ -63,6 +63,11 @@ public class Usuario {
 	@NotNull(message = "El campo estado no puede ser nulo y/o vacio")
 	private boolean enabled;
 
+	/** Rol del usuario */
+	@Column(name = "rol", nullable = true)
+	@ApiModelProperty("Estado del usuario [ACTIVO(true) , INACTIVO(false)]")
+	private String rol;
+
 	/** Relacion uno a muchos, cantidad de roles que puede tener el usuario */
 	/*
 	 * @ManyToMany(fetch = FetchType.EAGER)
@@ -82,6 +87,28 @@ public class Usuario {
 	 */
 	public String getUsername() {
 		return username;
+	}
+
+	/**
+	 * Metodo get para rol
+	 * 
+	 * @author Sergio Arias
+	 * @date 9/11/2020
+	 * @return Retorna rol
+	 */
+	public String getRol() {
+		return rol;
+	}
+
+	/**
+	 * Metodo set para rol
+	 * 
+	 * @author Sergio Arias
+	 * @date 9/11/2020
+	 * @param setea rol
+	 */
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 
 	/**
@@ -203,6 +230,12 @@ public class Usuario {
 	 */
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nombres=" + nombres + ", username=" + username + ", correo=" + correo
+				+ ", password=" + password + ", enabled=" + enabled + ", rol=" + rol + "]";
 	}
 
 }

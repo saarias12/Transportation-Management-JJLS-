@@ -7,15 +7,12 @@ package edu.co.unipana.jjls.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import edu.co.unipana.jjls.model.Usuario;
 import edu.co.unipana.jjls.repo.IUsuarioRepo;
-import edu.co.unipana.jjls.service.IUsuarioService;
+import edu.co.unipana.jjls.service.IUsuarioService2;
 
 /**
  * Servicio que contiene la implementacion para usuarios
@@ -24,15 +21,14 @@ import edu.co.unipana.jjls.service.IUsuarioService;
  *
  */
 
-@Service("userDetailsService")
-public class UserServiceImpl implements UserDetailsService, IUsuarioService {
+@Service()
+public class UserServiceImpl2 implements IUsuarioService2 {
 
 	@Autowired
 	private IUsuarioRepo usuarioRepo;
 
-	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public Usuario obtenerUser(String username) throws UsernameNotFoundException {
 		Usuario user = usuarioRepo.findOneByUsername(username); // from usuario where username := username
 
 		if (user == null) {
@@ -41,12 +37,8 @@ public class UserServiceImpl implements UserDetailsService, IUsuarioService {
 		
 
 		
-		UserDetails userDetails = new User(user.getUsername(), user.getPassword(), null);
-		return userDetails;
+		return user;
 	}
-	
-
-
 	
 	@Override
 	public Usuario guardar(Usuario usuario) {

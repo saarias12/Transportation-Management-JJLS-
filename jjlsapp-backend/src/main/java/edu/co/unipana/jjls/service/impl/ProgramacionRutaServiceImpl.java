@@ -4,6 +4,7 @@
 package edu.co.unipana.jjls.service.impl;
 
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +46,18 @@ public class ProgramacionRutaServiceImpl implements IProgramacionRutaService {
 
 	@Override
 	public List<ProgramacionRuta> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return programacionRutaRepo.findAll();
+	}
+	
+	public List<ProgramacionRuta> listarPorCondicion(String origen,String destino, Date fechaInicial) {
+		
+		return programacionRutaRepo.FindByOrigenDestino(origen,destino,fechaInicial);
+	}
+	
+	public List<ProgramacionRuta> listarPorCondicionFechas(Date fechaInicial, Date fechaFinal) {
+		
+		return programacionRutaRepo.FindByFechas(fechaInicial,fechaFinal);
 	}
 
 	@Override
@@ -54,6 +65,9 @@ public class ProgramacionRutaServiceImpl implements IProgramacionRutaService {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
 
 }
 

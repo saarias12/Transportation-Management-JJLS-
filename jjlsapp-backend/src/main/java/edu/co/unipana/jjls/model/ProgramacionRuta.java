@@ -11,6 +11,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -45,10 +49,14 @@ public class ProgramacionRuta {
 
 	@Column(name = "fecha_inicial", nullable = false, unique = false)
 	@ApiModelProperty("Fecha inicial de la ruta")
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd-MM-yyyy") 
 	private Date fechaInicial;
 
 	@Column(name = "fecha_final", nullable = false, unique = false)
 	@ApiModelProperty("Fecha final de la ruta")
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd-MM-yyyy") 
 	private Date fechaFinal;
 
 	@Column(name = "hora_salida", nullable = false, unique = false)
