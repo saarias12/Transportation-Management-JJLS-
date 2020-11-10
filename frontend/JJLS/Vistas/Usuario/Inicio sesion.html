@@ -7,6 +7,7 @@
 <meta name="description" content="" />
 <link href="../../templatemo_style.css" rel="stylesheet" type="text/css" />
 <link href="../../css/jquery.ennui.contentslider.css" rel="stylesheet" type="text/css" media="screen,projection" />
+	<script type="text/javascript" src="../../js/inicio_sesion.js"></script> 
 </head>
 <body>
 <div id="templatemo_wrapper_outer">
@@ -30,7 +31,7 @@
       </ul>
     </div>
     
-	  <form>
+	  <form id="formulario" method="post">
     <div id="templatemo_content_wrapper">
       <div id="content">
         <div class="col_w280"> <br>
@@ -39,15 +40,17 @@
             <legend class = "linea">
 		
 				<center>
-            <div> <strong>Correo:</strong></strong> <br>
-			<input class="entrada" type="email"> <br><br>
+            <div> <strong>Nombre de Usuario:</strong></strong> <br>
+			<input class="entrada" type="text" name="usuario" id="usuario" > <br><br>
+					
+					
                   
 				<strong>Contraseña:</strong></strong> <br>
-			  <input class="entrada" type="password"> <br><br>
+			  <input class="entrada" type="password" id="password" name="pass"> <br><br>
 			  
              
             <br>
-            <button class="btn-3d" type="submit" name="action"> <i class="material-icons right" ><a href="indexUser.html">Ingresa</i></a> </button>
+            <button class="btn-3d" type="submit" name="action"> Ingresa</i></button>
 				
 				<a href="../AdminUser/indexAdmin.html">Admin</a>
             <br>

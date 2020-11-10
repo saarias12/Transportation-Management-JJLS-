@@ -7,6 +7,7 @@
 <meta name="description" content="" />
 <link href="../../templatemo_style.css" rel="stylesheet" type="text/css" />
 <link href="../../css/jquery.ennui.contentslider.css" rel="stylesheet" type="text/css" media="screen,projection" />
+	<script type="text/javascript" src="../../js/conductor.js"></script> 
 </head>
 <body>
 <div id="templatemo_wrapper_outer">
@@ -39,20 +40,27 @@
           <h2>&nbsp; Registro Conductores</h2>
           <blockquote>
             <legend class = "linea">
+				
+				
+				
             
-            
+            <form name="registro" onSubmit="return false;">
+				
+				
+				
+				
             <div>
 <p> <strong>Datos Conductores:&nbsp;</strong></p>
 <label for="textfield"><strong>Nombres y Apellidos:</strong>&nbsp;
                 <br />
               </label>
-<input type="text" name="textfield" id="textfield" />
+<input class="entrada" type="text"  name="nombre" id="nombre" />
 </div>
 <br>
             <p><strong>
               <label for="textfield3">N° Documento:<br />
               </label>
-              <input type="text" name="textfield3" id="textfield3" />
+              <input placeholder="&nbsp;Valores Numericos" class="entrada" type="text" name="documento" id="documento"/>
               </strong>&nbsp;
               
               
@@ -62,22 +70,36 @@
               
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
             <label for="textfield4"><strong>Tipo Licencia:</strong><br />
-              <input type="text" name="textfield4" id="textfield4" />
+				
+				<select Class="entrada" type="text"  name="tipo" id="tipo">
+                <option>A1</option>
+                <option>A2</option>
+                <option>B1</option>
+                <option>B2</option>
+				<option>B3</option>
+				<option>C1</option>
+                <option>C2</option>
+				<option>C3</option>
+              </select>
+				
+				
               <br />
               <br />
             </label>
             <label for="textfield5"><strong>N° De Licencia:</strong><br />
             </label>
-            <input type="text" name="textfield5" id="textfield5" />
+            <input placeholder="&nbsp;Valores Numericos" class="entrada" type="text" name="textfield5" id="licencia"  name="licencia"/>
             <label for="textfield7"><br />
               
 <br />
             </label>
 <br>
-            <button class="btn-3d" type="submit" name="action"> <i class="material-icons right">Registrar&nbsp;</i> </button>
+            <button class="btn-3d" onClick="obtenerdatos()" type="submit" name="action"> <i class="material-icons right">Registrar</i> </button>
+				
             <br>
             </legend>
           </blockquote>
+			  </form>
         </div>
         <div class="cleaner"></div>
       </div>
@@ -87,5 +109,6 @@
     <div id="templatemo_footer"> Desarrollo de uso educativo no comercial - <a href="#">Ing software 2</a> </div>
   </div>
 </div>
+	
 </body>
 </html>

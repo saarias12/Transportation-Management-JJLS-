@@ -345,7 +345,7 @@ padding-bottom: 15px;
 	padding-right: 40px;
 }
 
-.col_w560 {
+.ww560 {
 	float: left;
 	width: 520px;
 	padding-right: 40px;
@@ -467,7 +467,37 @@ border-radius: 10px;
 	
 	left:120%;
 	
+	
 }
+
+.linea2 {
+	width: 60%;
+	  background-color: #222121;
+	border-radius: 10px;
+	 padding-top: 15px;
+	padding-left: 100px;
+	padding-bottom: 0px;
+	padding-right: 100px;
+	
+	left:120%;
+
+
+}
+
+.linea3 {
+	width: 60%;
+	  background-color: #222121;
+	border-radius: 10px;
+	 padding-top: 15px;
+	padding-left: 100px;
+	padding-bottom: 10px;
+	padding-right: 100px;
+	
+	left:120%;
+
+
+}
+
 .btn-3d {
   padding: 10px;
   border: 3px solid #995309;

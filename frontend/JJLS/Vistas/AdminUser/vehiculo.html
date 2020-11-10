@@ -32,8 +32,7 @@
 		  <li><a href="Conductores.html">Conductores</a></li>
       </ul>
     </div>
-    <div id="templatemo_slider_wrapper"> </div>
-    <div id="templatemo_content_wrapper">
+<br><br>
       <div id="content">
         <div class="col_w280">
           <h2>&nbsp; Registro Vehiculos</h2>
@@ -44,39 +43,34 @@
             <div>
               <p> <strong>Tipo de vehiculo:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></p>
               <p>
-                <input type="radio" name="radio4" id="radio4" value="radio4" />
-                <label for="radio4">Auto bus <br />
-                </label>
-                <input type="radio" name="radio3" id="radio3" value="radio3" />
-                &nbsp;Mini Bus&nbsp;
-                <label for="radio3"> <br />
-                </label>
-                <input type="radio" name="radio2" id="radio2" value="radio2" />
-                <label for="radio2">Autobus de Dos pisos&nbsp; </label>
-                <label for="textfield"></label>
-                <br />
-                <input type="radio" name="radio" id="radio" value="radio" />
-                <label for="radio">Vans&nbsp; <strong><br />
-                </strong></label>
-                &nbsp; &nbsp;</p>
-              <input type="image" name="imageField" id="imageField" src="../../images/bus.jpg" />
+                <select class="entrada" name="bus" id="bus">
+                <option>Auto Bus</option>
+                <option>Mini Bus</option>
+                <option>Autobus de dos pisos</option>
+                <option>Vans</option>
+				 
+              </select>
+                </strong></label><br><br>
+			  <strong>Foto del vehiculo</strong></p>
+                
+              <input class="entrada" type="file" name="imagen" id="imagen" />
               <p>&nbsp;</p>
               <p> <strong>Caracterizticas de vehiculo</strong></p>
-<label for="textfield"><strong>Marca  :</strong>&nbsp;
+<label for="textfield"><strong>Marca:</strong>&nbsp;
                 <br />
               </label>
-<input type="text" name="textfield" id="textfield" />
+<input class="entrada" type="text" name="marca" id="marca" />
 <p><strong><br />
 </strong></p>
-<p> <strong>Kilometre:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong> </p>
-<input type="text" name="textfield2" id="textfield2" />
+<p> <strong>Kilometraje:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong> </p>
+<input placeholder="&nbsp;Valores Numericos" class="entrada" type="number" name="kilometraje" id="kilometraje" />
 </div>
 <label for="textfield2">&nbsp;</label>
 <br>
             <p><strong>
               <label for="textfield3">Modelo:<br />
               </label>
-              <input type="text" name="textfield3" id="textfield3" />
+              <input placeholder="&nbsp;Valores Numericos" class="entrada" type="number" name="modelo" id="modelo" />
               </strong>&nbsp;
               
               
@@ -86,29 +80,36 @@
               
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
             <label for="textfield4"><strong>Placa:</strong><br />
-              <input type="text" name="textfield4" id="textfield4" />
+              <input placeholder="&nbsp;Seis digitos" class="entrada" type="text" name="placa" id="placa" />
               <br />
               <br />
             </label>
             <label for="textfield5"><strong>Cilindraje:</strong><br />
             </label>
-            <input type="text" name="textfield5" id="textfield5" />
+            <input placeholder="&nbsp;Valores Numericos" class="entrada" type="number" name="cilindraje" id="cilindraje" />
             <label for="textfield7"><br />
               <br />
               <strong>Tipo de Gas</strong>:<br />
             </label>
-            <input type="text" name="textfield7" id="textfield7" />
+             <select class="entrada" name="tipog" id="tipog">
+                <option>Bioetanol</option>
+                <option>Diésel normal</option>
+                <option>Diésel plus</option>
+                <option>Biodiésel</option>
+				 <option>Gas Natural</option>
+              </select>
+				
             <label for="textfield8"><br />
               <br />
               <strong> Mantenimiento:</strong><br />
             </label>
-            <input type="text" name="textfield8" id="textfield8" />
+            <textarea class="entrada" name="mantenimiento" id="mantenimiento" rows="10" cols="40">Escribe aquí los mantenimientos</textarea>
             <label for="textfield4">              &nbsp;<br />
               <br />
               <br />
             </label>
 <br>
-            <button class="btn-3d" type="submit" name="action"> <i class="material-icons right">Registrar&nbsp;</i> </button>
+            <button onClick="obtenerdatosF()"  class="btn-3d" type="submit" name="action"> <i class="material-icons right">Registrar&nbsp;</i> </button>
             <br>
             </legend>
           </blockquote>
@@ -121,5 +122,6 @@
     <div id="templatemo_footer"> Desarrollo de uso educativo no comercial - <a href="#">Ing software 2</a> </div>
   </div>
 </div>
+<script type="text/javascript" src="../../js/Vehiculos.js"></script> 
 </body>
 </html>
